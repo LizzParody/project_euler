@@ -11,3 +11,5 @@ while (fib[0] + fib[1] < 4000000){
     sum += i;
   }
 }
+
+console.log(sum);
