@@ -3,7 +3,9 @@
 
 What is the smallest positive number that is evenly divisible by all of the
 numbers from 1 to 20?
+*/
 
+//With a for loop (is very slow, takes 4 billion computations)
 var match;
 for(var i = 21; ; i++){
   match = true;
@@ -18,13 +20,12 @@ for(var i = 21; ; i++){
 }
 console.log(i);
 
-*/
 
 var steps = 0;
 
+//With an algorithm very efficient, using greatest common divisor
 //a has to be greater than b!
 function gcd(a, b) {
-  steps++;
   if(b == 0){
     return a;
   }
@@ -32,7 +33,6 @@ function gcd(a, b) {
 }
 
 function lcm(a, b) {
-  steps++;
   return (a * b)/gcd(a ,b);
 }
 
@@ -44,4 +44,3 @@ function findMagicNumber(num) {
   return lcmSoFar;
 }
 console.log(findMagicNumber(20));
-console.log(steps);
