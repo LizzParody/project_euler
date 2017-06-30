@@ -21,8 +21,6 @@ for(var i = 21; ; i++){
 console.log(i);
 
 
-var steps = 0;
-
 //With an algorithm very efficient, using greatest common divisor
 //a has to be greater than b!
 function gcd(a, b) {
