@@ -29,9 +29,29 @@ for (var r = 0; r < 20; r++) {
 }
 
 console.log(arr);
+var max = 0;
 
 for(var row = 0; row < 20; row++){
   for(var col = 0; col < 20; col++){
-    
+    var down = 0;
+    var right = 0;
+    var diagonalDown = 0;
+    var diagonalUp = 0;
+
+    if(row+3 < 20) {
+      down = arr[row][col] * arr[row + 1][col] * arr[row + 2][col] * arr[row + 3][col];
+    }
+    if(col+3 < 20) {
+      right = arr[row][col] * arr[row][col+1] * arr[row][col+2] * arr[row][col+3];
+    }
+    if(row+3 < 20 && col+3 < 20){
+      diagonalDown = arr[row][col] * arr[row + 1][col+1] * arr[row+2][col+2] * arr[row+3][col+3];
+    }
+      if(row-3>0 && col+3 < 20){
+      diagonalUp = arr[row][col] * arr[row-1][col+1] * arr[row-2][col+2] * arr[row-3][col+3];
+    }
+    max = Math.max(max, down, right, diagonalDown, diagonalUp);
   }
 }
+
+console.log(max);
